@@ -14,6 +14,10 @@ KeyGuardLibrary.Set({
 	falseData = falseData,
 })
 
+
+local key = ""
+
+
 local keysys = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -110,12 +114,12 @@ TextButton_3.TextWrapped = true
 
 UICorner_5.Parent = TextButton_3
 
-local key = TextBox.Text
 TextButton.MouseButton1Click:Connect(function() 
 	setclipboard(KeyGuardLibrary.getLink())
 end)
 
 TextButton_2.MouseButton1Click:Connect(function() 
+	local key = TextBox.Text
 	local response = KeyGuardLibrary.validateDefaultKey(key)
 	if response == trueData then
 		OrionLib:MakeNotification({
